@@ -20,7 +20,10 @@ from dotenv import load_dotenv
 import streamlit as st
 
 # 환경변수에 키 불러오기
-load_dotenv()
+# load_dotenv()
+
+# 해당 코드는 streamlit secrets 사용 시 활성화
+os.environ["UPSTAGE_API_KEY"] = st.secrets["UPSTAGE_API_KEY"]
 
 # 세션 상태 초기화
 if "id" not in st.session_state:
